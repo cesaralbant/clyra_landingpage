@@ -1,0 +1,60 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.rainbowText {
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.rainbowText:hover {
+  animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  16.67% { color: #ff8000; }
+  33.33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66.67% { color: #0000ff; }
+  83.33% { color: #8000ff; }
+  100% { color: #ff0000; }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: shootingStar 3s linear;
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(100vh);
+    opacity: 0;
+  }
+}

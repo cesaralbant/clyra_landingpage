@@ -1,0 +1,171 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply font-sans bg-black text-white min-h-screen;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white bg-opacity-5 backdrop-filter backdrop-blur-lg rounded-xl border border-white border-opacity-10;
+  }
+
+  .neon-text {
+    @apply font-bold text-transparent bg-clip-text bg-gradient-to-r;
+  }
+
+  .neon-white {
+    @apply from-white to-gray-300;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold text-black bg-white hover:bg-gray-200 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .section-heading {
+    @apply text-4xl font-bold text-center mb-12 neon-text neon-white tracking-wider;
+  }
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blur-bg {
+  @apply relative overflow-hidden;
+}
+
+.blur-bg::before {
+  content: "";
+  @apply absolute inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md z-0;
+}
+
+.blur-bg > * {
+  @apply relative z-10;
+}
+
+/* Futuristic Typography */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.futuristic-text {
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.section-heading {
+  @apply futuristic-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply futuristic-text;
+}
+
+/* Starry background */
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: shooting-star 3s linear;
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-heading {
+    @apply text-3xl;
+  }
+  
+  .header-nav {
+    @apply flex-col items-center;
+  }
+}
+
+/* Futuristic shape animation */
+@keyframes morphShape {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  25% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+  }
+  75% {
+    border-radius: 40% 60% 70% 30% / 60% 30% 70% 40%;
+  }
+}
+
+.futuristic-shape {
+  animation: morphShape 15s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Micro-interactions */
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Performance optimizations */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 3D Cube Animation */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
